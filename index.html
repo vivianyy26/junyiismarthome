@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jun Yii Smart Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <div class="nav-wrapper">
+          <!-- Mobile menu button -->
+<button class="mobile-menu-button" aria-label="Toggle navigation menu">
+  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+            
+           <a href="/" class="logo">
+            <img src="images/Untitled_design-2-removebg-preview.png" alt="Jun Yii Logo" class="logo-image">
+            <div class="logo-text-container">
+            <span class="logo-text-main">JUN YII</span>
+            <span class="logo-text-sub">SMART HOME</span>
+            </div>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+              <a href="index.html#categories" class="nav-link">Categories</a>
+              <a href="index.html#about-company" class="nav-link">About Company</a>
+              <a href="index.html#products" class="nav-link">Certificate</a>
+              <a href="index.html#inspiration" class="nav-link">Inspiration</a>
+              <a href="index.html#contact-section" class="nav-link">Contact</a>
+            </nav>
+            
+  <!-- Contact Us with WhatsApp Button (fully clickable) -->
+<a href="https://wa.me/102705575" class="contact-container" aria-label="Contact us on WhatsApp" target="_blank">
+    <span class="contact-text">Contact</span>
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.52 3.449C18.24 1.245 15.24 0.05 12.045 0.05C5.463 0.05 0.102 5.412 0.102 11.992C0.102 14.157 0.66 16.273 1.743 18.102L0 24.05L6.154 22.342C7.903 23.329 9.896 23.85 11.932 23.85H11.985C18.514 23.85 23.927 18.487 23.927 11.907C23.927 8.764 22.732 5.814 20.52 3.449ZM12.045 21.842C10.258 21.842 8.506 21.347 6.988 20.408L6.631 20.195L2.871 21.179L3.877 17.543L3.641 17.174C2.609 15.59 2.058 13.739 2.058 11.842C2.058 6.446 6.55 1.953 11.985 1.953C14.636 1.953 17.12 2.972 19.001 4.833C20.88 6.694 21.97 9.177 21.97 11.907C21.97 17.346 17.497 21.842 12.045 21.842ZM17.75 14.561C17.431 14.392 15.969 13.676 15.676 13.562C15.382 13.464 15.172 13.41 14.942 13.729C14.75 14.044 14.167 14.717 13.985 14.929C13.803 15.142 13.639 15.169 13.325 15.001C13.011 14.833 12.06 14.522 10.923 13.5C10.039 12.711 9.435 11.749 9.253 11.432C9.069 11.115 9.239 10.951 9.382 10.8C9.514 10.664 9.677 10.444 9.825 10.262C9.974 10.08 10.035 9.943 10.133 9.732C10.232 9.521 10.189 9.324 10.115 9.156C10.035 8.989 9.435 7.524 9.191 6.894C8.947 6.264 8.701 6.357 8.505 6.357C8.292 6.357 8.109 6.328 7.925 6.328C7.74 6.328 7.444 6.404 7.149 6.723C6.854 7.042 6.094 7.759 6.094 9.223C6.094 10.687 7.149 12.069 7.296 12.308C7.444 12.521 9.43 15.573 12.449 16.861C13.204 17.203 13.8 17.401 14.254 17.547C15.027 17.787 15.72 17.746 16.273 17.669C16.88 17.583 18.071 16.953 18.33 16.203C18.579 15.453 18.579 14.823 18.505 14.702C18.43 14.581 18.218 14.507 17.75 14.561Z" fill="currentColor"/>
+    </svg>
+  </a>
+          
+          <!-- Mobile Navigation -->
+          <nav class="mobile-nav" id="mobile-nav">
+            <a href="index.html#categories" class="nav-link">Categories</a>
+            <a href="index.html#about-company" class="nav-link">About Company</a>
+            <a href="index.html#products" class="nav-link">Certificate</a>
+            <a href="index.html#inspiration" class="nav-link">Inspiration</a>
+            <a href="index.html#contact-section" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="hero">
+        <!-- Background Video with pointer-events: none to prevent interaction -->
+        <video id="heroVideo" autoplay muted loop class="hero-video" style="pointer-events: none;">
+          <source src="images/video header.mov" type="video/mp4">
+          <source src="images/video header.webm" type="video/webm"> <!-- Optional alternative format -->
+        </video>
+        <div class="hero-content animate__animated animate__fadeIn">
+          <h1>Security meets luxury</h1>
+          <p>Premium solutions for the discerning homeowner</p>
+          <button class="primary-btn animate__animated animate__pulse animate__infinite animate__slower" onclick="window.location.href='item page smart lock.html';">
+            Explore collection
+          </button>
+        </div>
+      </section>
+    
+    <section id="categories" class="categories">
+      <div class="container">
+      <h2 class="section-title">Categories</h2>
+      <div class="category-grid">
+      <div class="category-item animate__animated animate__fadeInUp" onclick="window.location.href='item page smart lock.html';">
+      <div class="category-img" id="safes-img"></div>
+      <a href="item page smart lock.html"><h3>Luxury Safes</h3></a>
+      </div>
+      <div class="category-item animate__animated animate__fadeInUp" onclick="window.location.href='lock.html';">
+      <div class="category-img" id="locks-img"></div>
+      <a href="lock.html"><h3>Smart Locks</h3></a>
+      </div>
+      <div class="category-item animate__animated animate__fadeInUp" onclick="window.location.href='home.html';">
+      <div class="category-img" id="smart-home-img"></div>
+      <a href="home.html"><h3>Smart Home</h3></a>
+      </div>
+      <div class="category-item animate__animated animate__fadeInUp" onclick="window.location.href='hardware.html';">
+      <div class="category-img" id="hardware-img"></div>
+      <a href="hardware.html"><h3>Premium Hardware</h3></a>
+      </div>
+      <div class="category-item animate__animated animate__fadeInUp" onclick="window.location.href='kitchenware.html';">
+      <div class="category-img" id="kitchenware-img"></div>
+      <a href="kitchenware.html"><h3>Kitchenware</h3></a>
+      </div>
+      </div>
+      </div>
+      </section>
+
+         <!-- About Company Section -->
+         <section id="about-company" class="about-company">
+            <div class="container">
+              <h2 class="section-title">About Company</h2>
+              <p>We provide smart furniture and high-quality hardware for homes and businesses, including smart safes, door locks, and kitchen tools. With advanced technology and craftsmanship, we enhance convenience, security, and efficiency in daily life.</p>
+              <p>我们提供智能家具和高品质五金产品，如智能保险箱、门锁和厨房工具。凭借先进技术和精湛工艺，我们提升生活的便利性、安全性和效率。</p>
+            </div>
+          </section>
+
+        <section class="promo">
+    <div class="container">
+        <div class="promo-content animate__animated animate__fadeInLeft">
+            <h2>Our Vision | 企业愿景</h2>
+            <p>To promote the development of the smart home industry through continuous innovation, so that every customer can enjoy a more convenient, safe, and comfortable life.</p>
+            <p>通过不断创新，推动智能家居行业的发展，让每一位客户都能享受更加便捷、安全、舒适的生活。</p>
+
+            <h2>Our Mission | 企业使命</h2>
+            <p>To provide high-quality, efficient, and intelligent products and solutions to enhance the quality of life in modern homes and commercial spaces.</p>
+            <p>提供优质、高效、智能化的产品与解决方案，提升现代家庭和商业空间的生活品质。</p>
+        </div>
+        <div class="promo-image animate__animated animate__fadeInRight"></div> 
+    </div>
+</section>
+
+        
+         <!-- Product -->
+        <section id="products" class="products">
+            <div class="container">
+                <h2 class="section-title">Certificate</h2>
+                <div class="product-grid">
+                    <div class="product-card animate__animated animate__zoomIn">
+                        <div class="product-img" id="product-safe"></div>
+                    </div>
+                    <div class="product-card animate__animated animate__zoomIn" style="animation-delay: 0.2s;">
+                        <div class="product-img" id="product-lock"></div>
+                    </div>
+                    <div class="product-card animate__animated animate__zoomIn" style="animation-delay: 0.4s;">
+                        <div class="product-img" id="product-hub"></div>
+                    </div>
+                    <div class="product-card animate__animated animate__zoomIn" style="animation-delay: 0.6s;">
+                        <div class="product-img" id="product-hardware"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product -->
+        <section id="inspiration" class="inspiration">
+            <div class="container">
+              <h2 class="section-title">Luxury Inspirations</h2>
+              <div class="inspiration-grid">
+                <div class="inspiration-card">
+                  <div class="inspiration-img">
+                    <div class="overlay"></div>
+                    <video autoplay loop muted playsinline class="inspiration-video">
+                      <source src="images/video 2.mov" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="card-content">
+                    <h3>SMART SAFE BOX</h3>
+                    <p>Advanced technology meets culinary excellence</p>
+                    <a href="item page smart lock.html" class="text-link">View collection <span class="arrow">→</span></a>
+                  </div>
+                </div>
+                <div class="inspiration-card">
+                  <div class="inspiration-img">
+                    <div class="overlay"></div>
+                    <video autoplay loop muted playsinline class="inspiration-video">
+                      <source src="images/K900-S3DF PRO.MOV" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="card-content">
+                    <h3>Integrated Home Security</h3>
+                    <p>Seamless protection for modern luxury homes</p>
+                    <a href="lock.html" class="text-link">Discover solutions <span class="arrow">→</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        
+
+         <!-- New Contact Section with WhatsApp and Map -->
+<section id="contact-section" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-header">
+              <h3>Get in Touch</h3>
+              <div class="separator"></div>
+            </div>
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Shoplot Parcel NO. TF20 Third Floor, Delta Mall, Taman Seduan 8, 96000 Sibu,
+                    Sarawak, Malaysia</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+60 102689087</span>
+              </div>
+              <div class="whatsapp-contact">
+                <a href="https://wa.me/102705575" target="_blank" class="whatsapp-btn">
+                  <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                </a>
+              </div>
+              <div class="contact-hours">
+                <h4>Business Hours</h4>
+                <div class="hours-grid">
+                  <div class="day">Sunday - Thursday:</div>
+                  <div class="time">10am - 9pm</div>
+                  <div class="day">Friday</div>
+                  <div class="time">Closed</div>
+                  <div class="day">Saturday:</div>
+                  <div class="time">10am - 9pm</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-map">
+          <!-- Map Section -->
+          <div class="map-container">
+            <!-- Google Maps Embed -->
+            <iframe
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.5705647353802!2d111.84427997547293!3d2.3119700577272146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31f77f856f70fff3%3A0x9ed39e6ae070db8c!2sDelta%20Mall!5e0!3m2!1sen!2smy!4v1741782767199!5m2!1sen!2smy">
+            </iframe>
+            <!-- Map Overlay with Button -->
+            <div class="map-overlay">
+              <button class="map-btn" onclick="openGoogleMaps()">
+                <i class="fas fa-expand-alt"></i> View Larger Map
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- JavaScript Function to Open Google Maps -->
+<script>
+    function openGoogleMaps() {
+        window.open("https://www.google.com/maps/place/Federation+Square", "_blank");
+    }
+</script>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="https://wa.me/102705575">WhatsApp</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100092635643020&mibextid=wwXIfr&rdid=jp8xcefXYPrzpJHS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18kXS4xJow%2F%3Fmibextid%3DwwXIfr">Facebook</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop with us</h4>
+                    <ul>
+                        <li><a href="item page smart lock.html">Luxury Safe</a></li>
+                        <li><a href="lock.html">Smart Lock</a></li>
+                        <li><a href="home.html">Smart Home</a></li>
+                        <li><a href="hardware.html">Premium Hardware</a></li>
+                        <li><a href="kitchenware.html">Kitchenware</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#about-company">Our Company</a></li>
+                        <li><a href="#products">Certificate</a></li>
+                        <li><a href="#contact-section">Map</a></li>
+                        <li><a href="#contact-section">Contact Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Visit Us On</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100092635643020&mibextid=wwXIfr&rdid=jp8xcefXYPrzpJHS&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18kXS4xJow%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© JUN YII SMART HOME 2025. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Cookie policy</a>
+                    <a href="#">Terms and conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu functionality
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  
+  // Early exit if elements don't exist
+  if (!mobileMenuButton || !mobileNav) {
+    console.warn('Mobile menu elements not found');
+    return;
+  }
+  
+  // SVG paths for menu icons
+  const menuOpenIcon = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+  const menuCloseIcon = '<path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+  
+  // Toggle menu on click
+  mobileMenuButton.addEventListener('click', function() {
+    // Toggle active class
+    mobileNav.classList.toggle('active');
+    
+    // Get menu icon element
+    const menuIcon = mobileMenuButton.querySelector('svg');
+    
+    // Update icon only if SVG element exists
+    if (menuIcon) {
+      menuIcon.innerHTML = mobileNav.classList.contains('active') ? menuCloseIcon : menuOpenIcon;
+    }
+  });
+  
+  // Video handling - consolidated into a single block
+  const video = document.getElementById('heroVideo');
+  
+  if (video) {
+    // Prevent clicks on video
+    video.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+    
+    // Prevent context menu on video
+    video.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      return false;
+    }, true);
+    
+    // Prevent fullscreen on video
+    video.addEventListener('webkitfullscreenchange', exitFullscreen);
+    video.addEventListener('mozfullscreenchange', exitFullscreen);
+    video.addEventListener('fullscreenchange', exitFullscreen);
+    
+    function exitFullscreen() {
+      if (document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        }
+      }
+    }
+    
+    // Special handling for iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
+    if (isIOS) {
+      // iOS requires user interaction first
+      const playVideoOnce = function() {
+        video.play().catch(err => console.log("iOS playback failed:", err));
+        document.removeEventListener('touchstart', playVideoOnce);
+        document.removeEventListener('click', playVideoOnce);
+      };
+      
+      document.addEventListener('touchstart', playVideoOnce);
+      document.addEventListener('click', playVideoOnce);
+    } else {
+      // Try to play automatically on non-iOS
+      video.play().catch(function(error) {
+        console.log("Video autoplay failed:", error);
+      });
+    }
+    
+    // Handle back navigation
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted) {
+        // Page was restored from back/forward cache
+        video.play().catch(err => console.log("Pageshow playback failed:", err));
+        
+        // Ensure it's not in fullscreen
+        exitFullscreen();
+      }
+    });
+  }
+});
+
+       </script>
+</body>
+</html>

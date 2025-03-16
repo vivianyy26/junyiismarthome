@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/Aqara_Smart_Door_Lock_0313041026_texture_fbx"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "smart home"
+	}
+}

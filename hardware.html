@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hardware</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Helvetica Neue', Arial, 'sans-serif';
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+            transition: transform 0.5s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+        }
+        
+        .nav-item {
+            margin-left: 20px;
+            position: relative;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #000000;
+            transform: translateY(-2px);
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+        /* Base styles for secondary navigation */
+.secondary-nav {
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.secondary-nav .container {
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.category-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.category-links .category-item {
+  margin: 0 15px;
+}
+
+.category-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 5px 0;
+  display: block;
+  text-align: center;
+}
+
+/* Mobile styles - vertical menu */
+@media (max-width: 768px) {
+  .secondary-nav {
+    overflow-x: visible;
+  }
+  
+  .secondary-nav .container {
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .category-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .category-links .category-item {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .category-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('images/hardware/IMG_2743.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Make responsive for mobile */
+@media (max-width: 768px) {
+    .hero-banner {
+        height: 400px;
+    }
+    
+    .hero-title {
+        font-size: 20px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Make responsive for mobile */
+@media (max-width: 768px) {
+    .landscape-image {
+        height: 200px; /* Smaller height on mobile */
+    }
+}  
+        /* Secondary Navigation */
+        .secondary-nav {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .category-links {
+            display: flex;
+            list-style-type: none;
+            overflow-x: auto;
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+        
+        .category-item {
+            margin-right: 20px;
+        }
+        
+        .category-link {
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .category-link:hover {
+            color: #000000;
+        }
+        
+        .category-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e6b000;
+            transition: width 0.3s ease;
+        }
+        
+        .category-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Product Display */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards 0.3s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            position: relative;
+            top: 0;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover .product-image {
+            transform: scale(1.08);
+        }
+        
+        .product-card:hover::before {
+            opacity: 1;
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg,  #e6b000,  #e6b000);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            transition: transform 0.7s ease;
+        }
+        
+        .product-info {
+            padding: 15px;
+            position: relative;
+            z-index: 1;
+            background: white;
+        }
+        
+        .product-title {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+        
+        .product-card:hover .product-title {
+            color:  #e6b000;
+        }
+        
+        .product-price {
+            color:  #000000;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            padding-top: 60px;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .product-card:hover .product-price {
+            transform: scale(1.1);
+            color:  #e6b000;
+        }
+
+        .product-kg {
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-kg {
+            transform: scale(1.05);
+        }
+        
+        /* Shimmer effect */
+        .shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.2) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: shimmer 3s infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .product-card:hover .shimmer {
+            opacity: 1;
+        }
+        
+        @keyframes shimmer {
+            to {
+                left: 150%;
+            }
+        }
+        
+        /* Header animation */
+        .header {
+            position: relative;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-image {
+        height: 60px;
+        width: 60px; /* Adjust based on your needs */
+        margin-right: 10px; /* Space between logo and text */
+        }
+        
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text-main {
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: letter-spacing 0.5s ease;
+        }
+        
+        .logo:hover .logo-text-main {
+            letter-spacing: 2px;
+        }
+        
+        .logo-text-sub {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .desktop-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .desktop-nav .nav-link {
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .desktop-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color:  #e6b000;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        
+        .desktop-nav .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        .contact-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        
+        .contact-text {
+            font-weight: 500;
+        }
+        
+        .mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: #333;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .mobile-nav.active {
+            max-height: 300px;
+            padding: 15px 0;
+        }
+        
+        .mobile-nav .nav-link {
+            padding: 12px 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+            
+            .mobile-nav {
+                display: flex;
+            }
+            
+            .logo-image {
+    height: 60px;
+    width: 60px; /* Adjust based on your needs */
+    margin-right: 10px; /* Space between logo and text */
+  }
+        }
+        
+        /* Page load animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        body {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: white;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+          <div class="nav-wrapper">
+            <!-- Mobile menu button -->
+<button class="mobile-menu-button" aria-label="Toggle navigation menu">
+    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+           <a href="/" class="logo">
+            <img src="images/Untitled_design-2-removebg-preview.png" alt="Jun Yii Logo" class="logo-image">
+            <div class="logo-text-container">
+            <span class="logo-text-main">JUN YII</span>
+            <span class="logo-text-sub">SMART HOME</span>
+            </div>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+              <a href="index.html#categories" class="nav-link">Categories</a>
+              <a href="index.html#about-company" class="nav-link">About Company</a>
+              <a href="index.html#products" class="nav-link">Certificate</a>
+              <a href="index.html#inspiration" class="nav-link">Inspiration</a>
+              <a href="index.html#contact-section" class="nav-link">Contact</a>
+            </nav>
+            
+           <!-- Contact Us with WhatsApp Button (fully clickable) -->
+<a href="https://wa.me/102705575" class="contact-container" aria-label="Contact us on WhatsApp" target="_blank">
+    <span class="contact-text">Contact</span>
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M20.52 3.449C18.24 1.245 15.24 0.05 12.045 0.05C5.463 0.05 0.102 5.412 0.102 11.992C0.102 14.157 0.66 16.273 1.743 18.102L0 24.05L6.154 22.342C7.903 23.329 9.896 23.85 11.932 23.85H11.985C18.514 23.85 23.927 18.487 23.927 11.907C23.927 8.764 22.732 5.814 20.52 3.449ZM12.045 21.842C10.258 21.842 8.506 21.347 6.988 20.408L6.631 20.195L2.871 21.179L3.877 17.543L3.641 17.174C2.609 15.59 2.058 13.739 2.058 11.842C2.058 6.446 6.55 1.953 11.985 1.953C14.636 1.953 17.12 2.972 19.001 4.833C20.88 6.694 21.97 9.177 21.97 11.907C21.97 17.346 17.497 21.842 12.045 21.842ZM17.75 14.561C17.431 14.392 15.969 13.676 15.676 13.562C15.382 13.464 15.172 13.41 14.942 13.729C14.75 14.044 14.167 14.717 13.985 14.929C13.803 15.142 13.639 15.169 13.325 15.001C13.011 14.833 12.06 14.522 10.923 13.5C10.039 12.711 9.435 11.749 9.253 11.432C9.069 11.115 9.239 10.951 9.382 10.8C9.514 10.664 9.677 10.444 9.825 10.262C9.974 10.08 10.035 9.943 10.133 9.732C10.232 9.521 10.189 9.324 10.115 9.156C10.035 8.989 9.435 7.524 9.191 6.894C8.947 6.264 8.701 6.357 8.505 6.357C8.292 6.357 8.109 6.328 7.925 6.328C7.74 6.328 7.444 6.404 7.149 6.723C6.854 7.042 6.094 7.759 6.094 9.223C6.094 10.687 7.149 12.069 7.296 12.308C7.444 12.521 9.43 15.573 12.449 16.861C13.204 17.203 13.8 17.401 14.254 17.547C15.027 17.787 15.72 17.746 16.273 17.669C16.88 17.583 18.071 16.953 18.33 16.203C18.579 15.453 18.579 14.823 18.505 14.702C18.43 14.581 18.218 14.507 17.75 14.561Z" fill="currentColor"/>
+    </svg>
+  </a>
+          
+          <!-- Mobile Navigation -->
+          <nav class="mobile-nav" id="mobile-nav">
+            <a href="index.html#categories" class="nav-link">Categories</a>
+            <a href="index.html#about-company" class="nav-link">About Company</a>
+            <a href="index.html#products" class="nav-link">Certificate</a>
+            <a href="index.html#inspiration" class="nav-link">Inspiration</a>
+            <a href="index.html#contact-section" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </header>
+<!-- Hero Banner -->
+<div class="hero-banner">
+    <div class="hero-content">
+        <h1 class="hero-title">PREMIUM HARDWARE</h1>
+        <p class="hero-subtitle">Elevate your Projects with High-Performance Tools and Materials</p>
+    </div>
+</div>
+    
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+        <div class="container">
+            <ul class="category-links">
+                <li class="category-item"><a href="index.html" class="category-link">Home</a></li>
+                <li class="category-item"><a href="item page smart lock.html" class="category-link">Luxury Safe</a></li>
+                <li class="category-item"><a href="lock.html" class="category-link">Smart Lock</a></li>
+                <li class="category-item"><a href="home.html" class="category-link">Smart Home</a></li>
+                <li class="category-item"><a href="hardware.html" class="category-link">Premium Hardware</a></li>
+                <li class="category-item"><a href="kitchenware.html" class="category-link">Kitchenware</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Product Display (Sample) -->
+    <div class="container">
+        <div class="product-grid">
+            <!-- Product items would be repeated here -->
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 1.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">EGMS100-PRO</h3>
+                    <div class="product-kg">3D Face Glass Door Smart Lock</div>
+                    <div class="product-price">RM 2888</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 2.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">EGS100-SLD</h3>
+                    <div class="product-kg">Gold | Silver | Black</div>
+                    <div class="product-price"> RM 2388</div>   
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 3.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">EGK700-PRO-MAX</h3>
+                    <div class="product-kg">Camera System - 3D Face ID</div>
+                    <div class="product-price">RM 5288</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 4.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Q9-Pro Max</h3>
+                    <div class="product-kg">3D Face & FingerPrint</div>
+                    <div class="product-price">RM 5088</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 5.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">X7-Pro</h3>
+                    <div class="product-kg">Black | Rose Gold</div>
+                    <div class="product-price">RM 3688</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 6.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">S8-Pro</h3>
+                    <div class="product-kg">3D Face Id & Video Call Door Bell</div>
+                    <div class="product-price">RM 4188</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 7.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">S8</h3>
+                    <div class="product-kg">NFC Card | Camera | FingerPrint</div>
+                    <div class="product-price">RM 3688</div>
+                </div>
+            </div>
+            
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 8.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">C7-Pro</h3>
+                    <div class="product-kg">WiFi System</div>
+                    <div class="product-price">RM 3688</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 9.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">X8-Pro</h3>
+                    <div class="product-kg">3D Infrared Face</div>
+                    <div class="product-price">RM 4888</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="shimmer"></div>
+                <img src="images/hardware/Free - 10.PNG" alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">C8-Pro</h3>
+                    <div class="product-kg">3D Infrared Face</div>
+                    <div class="product-price">RM 4188</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced JavaScript for sticky navigation and animations
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 10) {
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cache DOM elements
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            // Early exit if elements don't exist
+            if (!mobileMenuButton || !mobileNav) {
+                console.warn('Mobile menu elements not found');
+                return;
+            }
+            
+            // SVG paths for menu icons
+            const menuOpenIcon = '<path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+            const menuCloseIcon = '<path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+            
+            // Toggle menu on click
+            mobileMenuButton.addEventListener('click', function() {
+                // Toggle active class
+                mobileNav.classList.toggle('active');
+                
+                // Get menu icon element
+                const menuIcon = mobileMenuButton.querySelector('svg');
+                
+                // Update icon only if SVG element exists
+                if (menuIcon) {
+                    menuIcon.innerHTML = mobileNav.classList.contains('active') ? menuCloseIcon : menuOpenIcon;
+                }
+            });
+            
+            // Staggered animation for product cards
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach((card, index) => {
+                card.style.animation = `fadeInUp 0.8s forwards ${0.1 + (index * 0.1)}s`;
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+            });
+        });
+        
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        // Observe all product cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
